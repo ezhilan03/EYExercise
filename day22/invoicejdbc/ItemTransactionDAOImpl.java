@@ -1,4 +1,4 @@
-package EYExercise.day22;
+package EYExercise.day22.invoicejdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

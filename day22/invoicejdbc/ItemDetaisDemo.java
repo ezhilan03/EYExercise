@@ -1,4 +1,4 @@
-package EYExercise.day22;
+package EYExercise.day22.invoicejdbc;
 
 import java.util.HashSet;
 import java.util.Set;

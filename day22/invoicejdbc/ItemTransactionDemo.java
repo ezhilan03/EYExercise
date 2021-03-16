@@ -1,4 +1,4 @@
-package EYExercise.day22;
+package EYExercise.day22.invoicejdbc;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,8 +18,8 @@ public class ItemTransactionDemo {
 //		//delete
 //		System.out.println(itemImpl.deleteItemTransaction(1, 101));
 		
-		//update
-		System.out.println(itemImpl.updateItemTransaction(itemTransac1, 10));
+//		//update
+//		System.out.println(itemImpl.updateItemTransaction(itemTransac1, 10));
 		
 		//get
 		itemTransac1 = itemImpl.getItemTransaction(1, 101);
