@@ -1,0 +1,52 @@
+<html>
+	<body>
+
+		<script>
+			
+			function main(){
+				var paintBrush = Container();
+				console.log(paintBrush.doPaint());
+			}
+			
+			function Container(){
+				var pb = new PaintBrush();
+				pb.setPaint(new BluePaint());
+				return pb
+			}
+		
+			function PaintBrush(){
+				var p;
+				this.doPaint = function(){
+					return "now painting "+this.p.getColor();
+				}
+				this.setPaint = function(paint){
+					this.p=paint;
+				}
+			}
+			
+			function Paint(){
+				this.getColor = function(){
+					return this.color;
+				}
+			}
+			
+			function RedPaint(){
+				this.color="red";
+			}
+			
+			function BluePaint(){
+				this.color="blue";
+			}
+			
+			RedPaint.prototype = new Paint();
+			RedPaint.prototype.constructor = RedPaint;
+			
+			BluePaint.prototype = new Paint();
+			BluePaint.prototype.constructor = BluePaint;
+		</script>
+
+	<form onsubmit="return false">
+	<input type ="submit" value="Click here" onclick="main()">
+	</form>
+	</body>	
+</html>

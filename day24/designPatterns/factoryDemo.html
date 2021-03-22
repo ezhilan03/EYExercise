@@ -1,0 +1,81 @@
+<html>
+	<body>
+
+		<script>
+			function main(){
+				var shoeShop = Container();
+				console.log(shoeShop.sellShoe().name);
+				console.log(shoeShop.getShoeFactory());
+			}
+			
+			function Container(){
+				var ss = new RamuShoeShop();
+				ss.setShoeFactory(new BataShoeFactory());
+				return ss;
+			}
+			
+			function ShoeFactory(){
+				this.makeShoe = function(){
+					return this.getShoe();
+				}
+			}
+			
+			function BataShoeFactory(){
+				this.getShoe = function(){
+					return new LeatherShoe();
+				}
+			}
+			
+			function LakhaniShoeFactory(){
+				this.getShoe = function(){
+					return new SportsShoe();
+				}
+			}
+			
+			function ShoeShop(){
+				var shoeFac;
+				this.setShoeFactory = function(shoeFactory){
+					this.shoeFactory=shoeFactory;
+				}
+				this.getShoeFactory = function(){
+					return this.shoeFactory;
+				}
+			}
+			
+			function RamuShoeShop(){
+				this.sellShoe = function(){
+					return this.shoeFactory.getShoe();
+				}
+			}
+			RamuShoeShop.prototype=new ShoeShop();
+			RamuShoeShop.prototype.constructor=RamuShoeShop;
+			
+			function Shoe(){
+				this.getName = function(){
+					return this.name;
+				}
+			}
+			
+			function LeatherShoe(){
+				this.name="LeatherShoe";
+			}
+			function SportsShoe(){
+				this.name="SportsShoe";
+			}
+			
+			BataShoeFactory.prototype = new ShoeFactory();
+			BataShoeFactory.prototype.constructor=BataShoeFactory;
+			
+			LakhaniShoeFactory.prototype = new ShoeFactory();
+			LakhaniShoeFactory.prototype.constructor=LakhaniShoeFactory;
+			
+			LeatherShoe.prototype=new Shoe();
+			LeatherShoe.prototype.constructor=LeatherShoe;
+			
+			SportsShoe.prototype=new Shoe();
+			SportsShoe.prototype.constructor=SportsShoe;
+			
+			main();
+		</script>
+	</body>	
+</html>

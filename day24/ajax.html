@@ -1,0 +1,33 @@
+<html>
+	<body>
+		<script>
+				var ajaxObj=new XMLHttpRequest();
+				function makeAjaxCall(url){
+					alert("hello");
+					var target=document.getElementById("targetDiv");
+					ajaxObj.open("GET",url);
+						console.log(ajaxObj.readyState);
+						ajaxObj.onreadystatechange=function(){
+							console.log(ajaxObj.readyState);
+							if(ajaxObj.readyState==4 && ajaxObj.status==200){
+								
+								console.log(ajaxObj.readyState);
+								var response=ajaxObj.responseText;
+								target.innerHTML=response;
+							}
+						}
+						
+					ajaxObj.send(null);//where u make the actual request...
+				}
+		
+		</script>
+	
+	<form>
+		<input type="button" onClick="makeAjaxCall('http://localhost:80/data.txt')" value="Click here"></input>
+	</form>
+	
+	<div id="targetDiv">
+		This is the place where the data procured from the server will get displayed....
+	</div>
+	</body>
+</html>

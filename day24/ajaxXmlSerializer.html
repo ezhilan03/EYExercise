@@ -1,0 +1,48 @@
+<html>
+	<body>
+		<script>
+				var ajaxObj=new XMLHttpRequest();
+				function makeAjaxCall(url){
+					//alert("hello");
+					var target=document.getElementById("targetDiv");
+					ajaxObj.open("GET",url);
+						ajaxObj.onreadystatechange=function(){
+							if(ajaxObj.readyState==4 && ajaxObj.status==200){
+								var response=ajaxObj.responseXML; // response is the document
+								//alert(response.xml);
+								//target.innerHTML=response.documentElement.nodeName;
+								var rootelement=response.documentElement;
+								alert(rootelement.nodeName);
+																
+								var elem1 = response.createElement("NewElement");
+								var val1 = response.createTextNode("Value1");
+								//var att=response.createAttribute("ID");
+								//var attvalue=response.createTextNode("111");
+								
+								//att.appendChild(attvalue);
+								//newelement.attributes.setNamedItem(att);
+								elem1.appendChild(val1);
+								rootelement.appendChild(elem1);
+								
+								//var clone=newelement.cloneNode(true);
+								//rootelement.firstChild.appendChild(clone);
+								//rootelement.firstChild.insertBefore(newelement,rootelement.firstChild.lastChild);
+								
+								console.log((new XMLSerializer()).serializeToString(response));
+
+							}
+						}
+					ajaxObj.send(null);//where u make the actual request...
+				}
+		
+		</script>
+	
+	<form>
+		<input type="button" onClick="makeAjaxCall('http://localhost:80/books.xml')" value="Click Here"></input>
+	</form>
+	
+	<div id="targetDiv">
+		This is the place
+	</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+    <script>
+        function makeAjaxCall(url){
+            var ajaxobj = new XMLHttpRequest();
+            ajaxobj.open("GET",url);
+            ajaxobj.onreadystatechange = function(){
+                if(ajaxobj.readyState == 4 && ajaxobj.status == 200)
+                {
+                   var response  = ajaxobj.responseXML;
+                   console.log(response);
+                   var country=document.getElementById('countryList').value;
+                   var rootelement=response.documentElement;
+                   console.log(rootelement);
+                    for(var i=0;i<rootelement.childNodes.length;i++)
+                        {
+                            if(rootelement.childNodes.item(i).getAttribute("name")==country){
+                                //cosnole.log(rootelement.childNodes.item(i))
+                            	push(rootelement.childNodes.item(i));
+                            }
+                        }
+                }
+            }
+            ajaxobj.send();
+        }
+        function push(countrylist)
+         {
+         var target=document.getElementById("target");
+         for(j=0;j<countrylist.childNodes.length;j++){
+          target.options[j]=new Option(countrylist.childNodes[j].
+          firstChild.nodeValue);
+         }
+        }
+    </script>
+    <body>
+        <body>
+        <form>
+        <select size="1" id="countryList" onchange="makeAjaxCall('http://localhost:80/city.xml')">
+            <option value="">Select a country</option>
+        	<option value="India">India</option>
+        	<option value="Iraq">England</option>
+        </select>
+         <select size="1" id="target">
+        	<option value="india">cities</option>
+        </select><br>
+        <input type="submit" value="submit">
+        </form>
+        </body>
+    </body>
+</html>	

@@ -1,0 +1,64 @@
+<html>
+	<body>
+
+		<script>
+			function main(){
+				var fan = Container();
+				fan.setState(new SwitchOffState());
+				while(true){
+					var flag =confirm("click yes to pull");
+					if(flag==true){
+						fan.pull();}
+					else{
+						break;
+					}
+					
+				}
+			}
+			function Container(){
+				return new Fan();
+			}
+			function Fan(){
+				this.setState = function(state){
+					this.state=state;
+				}
+				this.pull = function(){
+					this.state.execute(this);
+				}
+			}
+			
+			function SwitchOffState(){
+				this.execute = function(fan){
+					fan.setState(new SlowSpeedState());
+					console.log("Fan is in slow speed state");
+				}
+			}
+			
+			function SlowSpeedState(){
+				this.execute = function(fan){
+					fan.setState(new MediumSpeedState());
+					console.log("Fan is in Medium Speed State");
+				}
+			}
+			
+			function MediumSpeedState(){
+				this.execute = function(fan){
+					fan.setState(new FastSpeedState());
+					console.log("Fan is in Fast Speed State");
+				}
+			}
+			
+			function FastSpeedState(){
+				this.execute = function(fan){
+					fan.setState(new SwitchOffState());
+					console.log("Fan is in Switch Off State");
+				}
+			}
+			
+		</script>
+
+	<form onsubmit="return false">
+	<input type ="submit" value="Click here" onclick="main()">
+	</form>
+	</body>	
+</html>
