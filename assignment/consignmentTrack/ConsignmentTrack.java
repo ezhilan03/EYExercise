@@ -10,118 +10,99 @@ import java.time.temporal.TemporalAdjusters;
 import java.util.function.IntFunction;
 
 interface ConsignmentTracker {
-	public int calculateTotalTime(double dist, double speed, LocalTime breakTime);
-	public LocalDateTime calculateBusinessDays(int totalTime, LocalDateTime endDateTime);
-	public LocalDateTime addTimeToBusinessDays(int totalTime, LocalDateTime endDateTime);
+	public LocalDateTime getDeliveryDateAndTime();
 }
 
 public class ConsignmentTrack implements ConsignmentTracker {
-	private String startDate;	
-	private String startTime;			
-	private double distance; 		
-	private double speed;	
-	private String travelBreak;	
-		
-	public String getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(String sDate) {
-		this.startDate = sDate;
-	}
-
-	public String getStartTime() {
-		return startTime;
-	}
-
-	public void setsTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public double getDist() {
-		return distance;
-	}
-
-	public void setDist(double distance) {
+	private LocalDateTime start;
+	private float distance;
+	private float speed;
+	private BreakInterval interval;
+	
+	
+	public ConsignmentTrack(LocalDateTime start,float distance,float speed,BreakInterval interval) {
+		// TODO Auto-generated constructor stub
+		this.start = start;
 		this.distance = distance;
-	}
-
-	public double getSpeed() {
-		return speed;
-	}
-
-	public void setSpeed(double speed) {
 		this.speed = speed;
-	}
-
-	public String getTravelBreak() {
-		return travelBreak;
-	}
-
-	public void setTravelBreak(String travelBreak) {
-		this.travelBreak = travelBreak;
-	}
-
-	@Override
-	public LocalDateTime addTimeToBusinessDays(int totalTime, LocalDateTime endDateTime) {
-		endDateTime = endDateTime.plusMinutes(totalTime);
-		return endDateTime;
+		this.interval = interval;
 	}
 	
-	@Override
-	public LocalDateTime calculateBusinessDays(int totalTime, LocalDateTime endDateTime) {
-		Duration d = Duration.ofMinutes(totalTime);
-        long day = d.toDays();
-			    
-	    IntFunction<TemporalAdjuster> addBusinessDays = days -> TemporalAdjusters.ofDateAdjuster(
-        	    date -> {
-        	      LocalDate baseDate =
-        	          days > 0 ? date.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY))
-        	              : days < 0 ? date.with(TemporalAdjusters.nextOrSame(DayOfWeek.FRIDAY)) : date;
-        	      int businessDays = days + Math.min(Math.max(baseDate.until(date).getDays(), -4), 4);
-        	      return baseDate.plusWeeks(businessDays / 5).plusDays(businessDays % 5);
-        	    });
-	    
-	    if((endDateTime.toLocalDate()).equals(LocalDate.of(endDateTime.getYear(), 1, 1))
-	    		|| (endDateTime.toLocalDate()).equals(LocalDate.of(endDateTime.getYear(), 1, 26))
-	    		|| (endDateTime.toLocalDate()).equals(LocalDate.of(endDateTime.getYear(), 8, 15))
-	    		|| (endDateTime.toLocalDate()).equals(LocalDate.of(endDateTime.getYear(), 10, 2))) {
-	    	//endDateTime.withDayOfMonth(1);
-	    	day+=1;
-	    } 
-		    
-	    endDateTime = endDateTime.with(addBusinessDays.apply((int)day));
-	    return endDateTime;
-	}
-	
-	@Override
-	public int calculateTotalTime(double dist, double speed, LocalTime breakTime) {
-		int hourSum=0, minSum=0, secs=0;
-		double time = (dist/speed)*60; //value in minutes
-		int hrs=0, mts=0, sec=0;
+
+	public LocalDateTime getDeliveryDateAndTime() {
 		
-		if(time > 59) { 
-			hrs = (int)(time/60);
-			mts = (int)(time%60);
-			if(mts > 59) {
-				minSum = (int)(mts/60);
-				sec = (int)(mts%60);
-			}
-			if(minSum > 59) {
-				mts += (minSum/60);
-				sec += (minSum%60);
-			}
-			hourSum = breakTime.getHour()+hrs;
-			minSum = breakTime.getMinute()+mts;
-			secs = breakTime.getSecond()+sec;
-			System.out.println("time....."+hourSum+":"+minSum+":"+secs);
-		} else {
-			minSum = breakTime.getMinute()+(int)time;
-			if(minSum > 59) {
-				mts += (minSum/60);
-				sec += (minSum%60);
-			}
+		LocalDateTime arrival = LocalDateTime.of(2021,3,21,0,0,0);
+		LocalDateTime i = null;
+		System.out.println(arrival.getDayOfWeek());
+		
+		if(arrival.getDayOfWeek() == DayOfWeek.SATURDAY) 
+		{
+			arrival = arrival.plusDays(2);
+			arrival = LocalDateTime.of(arrival.getYear(),arrival.getMonth(),arrival.getDayOfMonth(),0,0,0);
+			i = arrival;
 		}
-		return (hourSum*60)+minSum+(secs/60);	
+		else if(arrival.getDayOfWeek() == DayOfWeek.SUNDAY)
+		{
+			arrival = arrival.plusDays(1);
+			arrival = LocalDateTime.of(arrival.getYear(),arrival.getMonth(),arrival.getDayOfMonth(),0,0,0);
+			i = arrival;
+		}
+		
+		double hours = Math.floor(distance/speed);
+		double minutes = ((distance%speed)/speed*60);
+		double seconds = Math.floor((minutes - (int)minutes)*60);
+		int min = (int)minutes;
+		int hr = (int)hours;
+		int sec = (int)seconds;
+				
+		System.out.println(hr);
+		System.out.println(min);
+		System.out.println(sec);
+		
+		System.out.println(arrival);
+		arrival = arrival.plusSeconds(hr*3600+min*60+sec);
+		System.out.println(arrival);
+		
+		
+		arrival = arrival.plusSeconds(interval.hours*3600+interval.minutes*60+interval.seconds);
+		System.out.println(arrival);
+		System.out.println(i);
+		
+		int count = 0;
+		while(!i.toLocalDate().isEqual(arrival.toLocalDate())) {
+			//System.out.println(ii);
+			
+			if(i.getDayOfWeek() == DayOfWeek.SATURDAY || i.getDayOfWeek() == DayOfWeek.SUNDAY
+					|| (i.getDayOfMonth() == 26 && i.getMonth().getValue() == 1)
+					||(i.getDayOfMonth() == 15 && i.getMonth().getValue() == 8)
+					||(i.getDayOfMonth() == 2 && i.getMonth().getValue() == 10)) {
+				count++;
+			}
+				
+				
+			System.out.println(i.getDayOfWeek());
+			i = i.plusDays(1);
+		}
+		System.out.println(count);
+		arrival = arrival.plusDays(count);
+		System.out.println(arrival);
+		
+		if(arrival.getDayOfWeek() == DayOfWeek.SATURDAY) 
+		{
+			System.out.println("sat");
+			arrival = arrival.plusDays(2);
+			arrival = LocalDateTime.of(arrival.getYear(),arrival.getMonth(),arrival.getDayOfMonth(),9,0,0);
+			i = arrival;
+		}
+		else if(arrival.getDayOfWeek() == DayOfWeek.SUNDAY)
+		{
+			System.out.println("sun");
+			arrival = arrival.plusDays(1);
+			arrival = LocalDateTime.of(arrival.getYear(),arrival.getMonth(),arrival.getDayOfMonth(),9,0,0);
+			i = arrival;
+		}
+		
+		System.out.println("ETA : "+arrival);
+		return arrival;
 	}
 }

@@ -29,5 +29,9 @@ public class ItemTransactionDemo {
 		Set<ItemTransactionDTO> set = new HashSet<>();
 		set=itemImpl.getItemTransactionAll();
 		System.out.println(set);
+		
+		//get items with inv number
+		set=itemImpl.getItemTransactionForParticularInvoice(2);
+		System.out.println(set);
 	}
 }

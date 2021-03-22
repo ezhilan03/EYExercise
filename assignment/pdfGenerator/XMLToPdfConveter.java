@@ -29,7 +29,7 @@ public class XMLToPdfConveter implements XMLToPdfConvertable{
 		dbf.setValidating(true);
 		
 		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document doc = db.parse(fileName+".xml");
+		Document doc = db.parse(fileName);
 		
 		Element rootElement = doc.getDocumentElement();
 		

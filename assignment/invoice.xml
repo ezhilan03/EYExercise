@@ -1,0 +1,1 @@
+<!DOCTYPE invoice SYSTEM "D:\java\workspace\eycorebasic\invoice.dtd"><invoice><customername>Ezhilan</customername><invno>1</invno><invdate>2021-04-19</invdate><items><item><itemno>1</itemno><itemname>item1</itemname><itemprice>120.0</itemprice><itemquantity>10</itemquantity><itemamount>1200.0</itemamount></item></items><gst></gst><net></net></invoice>

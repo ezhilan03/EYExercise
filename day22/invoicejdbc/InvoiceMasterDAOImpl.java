@@ -115,6 +115,18 @@ public class InvoiceMasterDAOImpl implements InvoiceMasterDAO {
 		}
 }
 	
+	public int getLength() {
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery("select count(*) from invoice_master");
+			rs.next();
+			return rs.getInt("count(*)");
+		}catch(Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+	
 	public void closeConnection() {
 		DBUtility.closeConnection(null);
 	}

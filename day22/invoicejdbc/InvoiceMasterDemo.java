@@ -13,6 +13,7 @@ public class InvoiceMasterDemo {
 		inv1.setInvdate(new Date(2021-04-16));
 		inv1.setInvno(1);
 		
+
 //		//insert :
 //		System.out.println(invImpl.insertInvoice(inv1));
 		
@@ -30,6 +31,8 @@ public class InvoiceMasterDemo {
 		Set<InvoiceMasterDTO> set = new HashSet<>();
 		set = invImpl.getInvoiceMasterAll();
 		System.out.println(set);
+		
+		System.out.println("No of records is "+invImpl.getLength());
 		
 		invImpl.closeConnection();
 	}

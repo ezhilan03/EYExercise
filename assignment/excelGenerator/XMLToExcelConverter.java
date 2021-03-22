@@ -1,5 +1,6 @@
 package EYExercise.assignment.excelGenerator;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -22,7 +23,7 @@ import org.w3c.dom.NodeList;
 
 
 interface XMLToExcelConvertable{
-	public void createFile(String sheetName) throws Exception;
+	public void createFile(String sheetName)throws Exception;
 	public void writeData(String fileName)throws Exception;
 }
 
@@ -32,7 +33,7 @@ public class XMLToExcelConverter implements XMLToExcelConvertable {
 	@Override
 	public void createFile(String sheetName) throws Exception{
 		workbook = new XSSFWorkbook();
-		XSSFSheet sheet = workbook.createSheet(sheetName);
+		XSSFSheet sheet = workbook.createSheet();
 		
 		CellStyle style = workbook.createCellStyle();
         Font myFont = workbook.createFont();
@@ -45,7 +46,7 @@ public class XMLToExcelConverter implements XMLToExcelConvertable {
 	public void writeData(String fileName) throws Exception{
 		
 		createFile(fileName);
-		XSSFSheet sheet = workbook.getSheet(fileName);
+		XSSFSheet sheet = workbook.getSheetAt(0);
 		
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		dbf.setIgnoringElementContentWhitespace(true);
@@ -53,7 +54,7 @@ public class XMLToExcelConverter implements XMLToExcelConvertable {
 		
 		DocumentBuilder db = dbf.newDocumentBuilder();
 		
-		Document doc = db.parse(fileName+".xml");
+		Document doc = db.parse(fileName);
 		
 		
 		Element rootElement = doc.getDocumentElement();
@@ -86,7 +87,7 @@ public class XMLToExcelConverter implements XMLToExcelConvertable {
 				l.add(sno);
 				String customerName = n.getChildNodes().item(1).getChildNodes().item(0).getNodeValue();
 				l.add(customerName);
-				int price = Integer.parseInt(n.getChildNodes().item(2).getChildNodes().item(0).getNodeValue());
+				double price = Double.parseDouble(n.getChildNodes().item(2).getChildNodes().item(0).getNodeValue());
 				l.add(price);
 				int quantity = Integer.parseInt(n.getChildNodes().item(3).getChildNodes().item(0).getNodeValue());
 				l.add(quantity);

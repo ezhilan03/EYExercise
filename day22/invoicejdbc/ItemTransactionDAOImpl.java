@@ -126,6 +126,32 @@ public class ItemTransactionDAOImpl implements ItemTransactionDAO{
 		}
 	}
 	
+	@Override
+	public Set<ItemTransactionDTO> getItemTransactionForParticularInvoice(int invNo) {
+		Set<ItemTransactionDTO> set = new HashSet<ItemTransactionDTO>();
+		try {
+			String query = "select * from item_transaction where inv_no = ?";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setInt(1, invNo);
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				int itemNo = rs.getInt("item_no");
+				int itemQuantity = rs.getInt("item_quantity");
+				
+				ItemTransactionDTO itemTransac = new ItemTransactionDTO();
+				itemTransac.setInvNo(invNo);
+				itemTransac.setItemNo(itemNo);
+				itemTransac.setItemQuantity(itemQuantity);
+				
+				set.add(itemTransac);
+			}
+			return set;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	public void closeConnection() {
 		DBUtility.closeConnection(null);
 	}

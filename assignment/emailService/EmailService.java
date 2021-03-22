@@ -41,8 +41,6 @@ public class EmailService implements EmailSender{
 		
 		
 		
-		
-		
 		String to = "ezhilan03@gmail.com";
 		String from = "ezhilan03@gmail.com";
 		String pass = ""; 

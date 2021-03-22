@@ -8,4 +8,5 @@ public interface InvoiceMasterDAO {
 	public int updateInvoice(InvoiceMasterDTO invMasterDTO,int customerNo);
 	public InvoiceMasterDTO getInvoiceMaster(int invno);
 	public Set<InvoiceMasterDTO> getInvoiceMasterAll();
+	public int getLength();
 }

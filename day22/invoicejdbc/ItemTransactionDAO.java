@@ -8,4 +8,5 @@ public interface ItemTransactionDAO {
 	public int updateItemTransaction(ItemTransactionDTO itemTransactionDTO,int itemQuantity);
 	public ItemTransactionDTO getItemTransaction(int invNo,int itemNo);
 	public Set<ItemTransactionDTO> getItemTransactionAll();
+	public Set<ItemTransactionDTO> getItemTransactionForParticularInvoice(int invNo);
 }

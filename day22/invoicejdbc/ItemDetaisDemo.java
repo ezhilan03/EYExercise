@@ -13,8 +13,8 @@ public class ItemDetaisDemo {
 		item1.setItemPrice(120.00);
 		item1.setItemUnit("1kg");
 		
-//		//insert
-//		System.out.println(itemImpl.insertItemDetails(item1));
+		//insert
+		System.out.println(itemImpl.insertItemDetails(item1));
 		
 //		//delete
 //		System.out.println(itemImpl.deleteItemDetails(1));
