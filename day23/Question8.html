@@ -1,0 +1,60 @@
+<html>
+	<body>
+		<script>
+		flag=0;
+			function met(){
+				if(document.getElementById("marital status").value=="unmarried"){
+					height = document.getElementById("height").value;
+					weight = document.getElementById("weight").value;
+					if(document.getElementById("gender").value=="male"){
+						if(height>5.5){
+							if(weight<75){
+								alert("You are selected");
+							}else
+								flag=1;
+						}else
+							flag=1;
+					}else{
+						if(height<5.5){
+							if(weight<55){
+								alert("You are selected");
+							}else
+								flag=1;
+						}else
+							flag=1;
+					}
+					
+				}else
+					flag=1;
+			
+				if(flag==1){
+					alert("Sorry you are not selected");
+				}
+			}
+			
+		</script>
+		<br><br>
+		<label>Enter your details</label><br>
+		<form >
+			<label for="gender">Enter your gender = </label>
+			<select id="gender" name="gender">
+			  <option value="male">male</option>
+			  <option value="female">female</option>
+			</select><br>
+			
+			<label for="marital status">marital status = </label>
+			<select id="marital status" name="marital status">
+				<option value="married">married</option>
+			    <option value="unmarried">unmarried</option>
+			</select><br>
+			
+			<label for="age">enter your age = </label>
+			<input type="number" id="age" min="19" max="29"><br>
+			<label for="height">enter your height in ft = </label>
+			<input type="number" id="height" min="0" max="100"><br>
+			<label for="weight">enter your weight in kg = </label>
+			<input type="number" id="weight"><br>
+			<button type="button" onClick="met()">Submit</button>
+		</form>
+	</body>
+</html>

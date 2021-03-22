@@ -1,0 +1,40 @@
+<html>
+	<body>
+		<script>
+		
+		function met(){
+				var x = document.getElementById("xcoordinate").value;
+				var y = document.getElementById("ycoordinate").value;
+				
+				var distance = Math.sqrt(x*x + y*y);
+				var radians = Math.atan2(y,x);
+				alert("r value = "+distance+"; theta value : "+radians);
+		}
+		
+		function met2(){
+			var r = document.getElementById("r").value;
+			var theta = document.getElementById("angle").value;
+			var x = r*Math.cos(theta);
+			var y = r*Math.sin(theta);
+			alert("x value = "+x+"; y value = "+y);
+		}
+		
+		</script>
+		<br><br>
+		<label>Rectangle to polar</label><br>
+		<form >
+			<label for="xcoordinate">(x,y) = </label>
+			<input type="text" id="xcoordinate">
+			<input type="text" id="ycoordinate"><br>
+			<button type="button" onClick="met()">Submit</button>
+		</form>
+		<br>
+		<label>Polar to rectangle</label><br>
+		<form >
+			<label for="xcoordinate">(r,angle) = </label>
+			<input type="text" id="r">
+			<input type="text" id="angle"><br>
+			<button type="button" onClick="met2()">Submit</button>
+		</form>
+	</body>
+</html>

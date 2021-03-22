@@ -1,0 +1,36 @@
+<html>
+	<body>
+		<script>
+		
+			var str = "Hello world. This is the end of my sentence.";
+			x=1;
+			function scroll(){
+					for(i=0;i<str.length;i++){
+						var s = str.substring(0,x);
+						status=s;
+						x++;
+						if(x==str.length)
+							x=1;
+						
+					}
+					window.setTimeout("scroll();",100);
+			}
+		
+			//scroll();
+			
+			str = "This is sentence two"
+			function scroll2(){
+				for(i=0;i<str.length;i++){
+					s = str.substring(0,x);
+					status=s;
+					x++;
+					if(x==str.length)
+						x=1;
+					
+				}
+			}
+			window.setInterval("scroll2();",100);
+			
+		</script>
+	</body>
+</html>

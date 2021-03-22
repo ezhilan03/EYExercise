@@ -1,0 +1,86 @@
+<html>
+	<body >
+		<script>
+			
+			function depreciation(original_value,years){
+				console.log(original_value,years)
+				var num=1;var accumulated = 0;
+				var table = document.createElement('table');
+				
+				var headRow = document.createElement('tr');   
+
+			    var title1 = document.createElement('td');
+			    var title2 = document.createElement('td');
+			    var title3 = document.createElement('td');
+			    var title4 = document.createElement('td');
+			    
+			    var text1 = document.createTextNode("Year");
+			    var text2 = document.createTextNode("Depriciation");
+			    var text3 = document.createTextNode("Accumulated depriciation");
+			    var text4 = document.createTextNode("Book Value");
+			    
+			    title1.appendChild(text1);
+			    title2.appendChild(text2);
+			    title3.appendChild(text3);
+			    title4.appendChild(text4);
+			    headRow.appendChild(title1);
+			    headRow.appendChild(title2);
+			    headRow.appendChild(title3);
+			    headRow.appendChild(title4);
+
+			    table.appendChild(headRow);
+				
+				for (var i = years; i >= 1; i--){
+					
+				    var tr = document.createElement('tr');   
+
+				    var td1 = document.createElement('td');
+				    var td2 = document.createElement('td');
+				    var td3 = document.createElement('td');
+				    var td4 = document.createElement('td');
+					
+				    var depricated = (original_value*i/(years*(years+1)/2));
+				    accumulated=accumulated+depricated;
+				    var total = original_value - accumulated;
+
+				    var text1 = document.createTextNode(num);
+				    var text2 = document.createTextNode(depricated);
+				    var text3 = document.createTextNode(accumulated);
+				    var text4 = document.createTextNode(total);
+				    
+				    num++;
+		
+				    td1.appendChild(text1);
+				    td2.appendChild(text2);
+				    td3.appendChild(text3);
+				    td4.appendChild(text4);
+				    tr.appendChild(td1);
+				    tr.appendChild(td2);
+				    tr.appendChild(td3);
+				    tr.appendChild(td4);
+
+				    table.appendChild(tr);
+				}
+				document.body.appendChild(table);
+				
+			}
+			
+			function met(){
+				year = parseInt(document.getElementById("years").value);
+				value = parseInt(document.getElementById("value").value);
+				depreciation(value,year);
+			}
+		
+		</script>
+		
+		<form >
+			<label for="assetNo">Enter asset number</label>
+			<input type="text" name="assetNo" id="assetName">
+			<label for="value">Enter original value</label>
+			<input type="number" id="value">
+			<label >Enter number of years</label>
+			<input type="number" id="years">'
+			<button type="button" onClick="met()">Submit</button>
+		</form>
+	</body>
+</html>

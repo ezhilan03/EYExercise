@@ -1,0 +1,37 @@
+<html>
+	<body>
+		<script>
+		
+		class account{
+			
+			setValues(name,accNo,type,balance){
+				this.name=name;
+				this.accNo=accNo;
+				this.type=type;
+				this.balance=balance;
+			}
+			
+		 	deposit(amount){
+				this.balance = this.balance + amount;
+				document.write("Your current balance is "+this.balance)
+			}
+			
+			withdraw(amount){
+				document.write("Balance "+this.balance)
+				this.balance = this.balance + amount;
+			}
+			display(){
+				document.write("Name : "+this.name+" balance : "+this.balance);
+			}
+			
+		}
+		
+		account1 = new account();
+		account1.setValues("Ezhilan",123,"savings",1000);
+		account1.deposit(500);
+		account1.withdraw(100);
+		account1.display();
+		
+		</script>
+	</body>
+</html>

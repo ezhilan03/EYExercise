@@ -1,0 +1,32 @@
+<html>
+	<body>
+		<script>
+		
+		function met(){
+			ssnumbers=[{"state":"california","ssnumber":"123"},{"state":"florida","ssnumber":"234"},{"state":"texas","ssnumber":"345"}]
+			x = document.getElementById("ssnumber").value;
+			if (x.length != 3) {
+			    alert("length must be exactly 3 characters")
+			  }
+			else{
+				ssnumbers.forEach(getState)
+			}
+		}
+		
+		function getState(obj){
+			x = document.getElementById("ssnumber").value;
+			if(obj.ssnumber==x)
+				alert("Your state is "+obj.state);
+		}
+		
+		
+		
+		</script>
+		<br>
+		<form >
+			<label for="ssnumber">Enter your social security number = </label>
+			<input type="text" id="ssnumber" >
+			<button type="button" onClick="met()">Submit</button>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+	<body>
+		<script>
+		
+			function display(){
+				//this.name="ramu";
+				this.getName = function(){
+					return this.name;
+				}
+				
+				alert(this.name);
+			}
+			
+			function person(){
+				this.name="ramu";
+				this.display=display;
+			}
+			
+			// obj = new person();
+			obj = new window['person']();
+			obj.display();
+		
+		</script>
+	</body>
+</html>
