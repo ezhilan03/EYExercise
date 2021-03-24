@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<style>
+			#target {height:300px;width:400px;padding:10px;border:2px solid #AAAA;}
+		</style>
+		<script>
+			function drag(ev){
+				var imgid = ev.target.id;
+				ev.dataTransfer.setData("image",imgid);
+			}
+			
+			function drop(ev){
+				ev.preventDefault();
+				var imgid = ev.dataTransfer.getData("image");
+				ev.target.appendChild(document.getElementById(imgid));
+			}
+			
+			function allowDrop(ev){
+				ev.preventDefault();
+				
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<img id="source" src="C:\Users\ezhil\OneDrive\Pictures\BigSmoke-GTASA.jpg" draggable="true"
+			ondragstart="drag(event)">
+	</body>
+</html>

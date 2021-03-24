@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<style>
+			
+		</style>
+		<script>
+		window.onload = function(){
+			var buttonObj = document.querySelector("#button");
+			var target = document.querySelector("p#location");
+			var watchID;
+			buttonObj.onclick = function(){
+				if(navigator.geolocation){
+					watchID = navigator.geolocation.watchPosition(showPosition);
+				}else{
+					target.innerHTML = "gelocation is not supported";
+				}
+			}
+			
+			function showPosition(position){
+				target.innerHTML = "Latitude: " + position.coords.latitude +
+			    "<br>Longitude: " + position.coords.longitude;	
+			}
+			
+			document.querySelector("#button2").onclick = function(){
+				navigator.geolocation.clearWatch(watchID);
+				target.innerHTML = "";
+			}
+		}
+		</script>
+	</head>
+	
+	<body>
+		<label for="button">Click button to get your coordinates</label>
+		<button id="button">CLICK TO GET LOCATION</button>
+		<button id="button2">CLICK TO STOP</button>
+		<p id="location"></p>
+	</body>
+</html>
