@@ -1,4 +1,4 @@
-package InternExercise.internWeb.day25.src;
+package day25;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
