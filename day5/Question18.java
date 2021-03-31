@@ -1,4 +1,4 @@
-package day5;
+package InternExercise.day5;
 import java.applet.*;
 import java.awt.*;
 <applet name=MgAp code=MgAp.class height=400 width=400 parameter HowOld=30 > 

@@ -1,4 +1,4 @@
-package EYExercise.day8;
+package InternExercise.day8;
 import java.util.Date;
 
 public class Question3 {

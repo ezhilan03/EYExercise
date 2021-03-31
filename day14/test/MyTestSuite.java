@@ -1,4 +1,4 @@
-package EYExercise.day14.test;
+package InternExercise.day14.test;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

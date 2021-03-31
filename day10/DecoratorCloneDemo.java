@@ -1,4 +1,4 @@
-package EYExercise.day10;
+package InternExercise.day10;
 
 public class DecoratorCloneDemo {
 	public static void main(String[] args) {

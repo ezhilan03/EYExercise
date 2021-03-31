@@ -1,4 +1,4 @@
-package EYExercise.day10;
+package InternExercise.day10;
 import java.lang.ref.PhantomReference;
 import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;

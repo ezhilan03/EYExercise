@@ -1,4 +1,4 @@
-package EYExercise.day17;
+package InternExercise.day17;
 
 import java.util.Locale;
 import java.util.ResourceBundle;

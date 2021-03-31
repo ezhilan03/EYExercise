@@ -1,4 +1,4 @@
-package EYExercise.day12.day5Lab;
+package InternExercise.day12.day5Lab;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

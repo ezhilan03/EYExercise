@@ -1,4 +1,4 @@
-package EYExercise.day21.lab;
+package InternExercise.day21.lab;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -24,7 +24,7 @@ public class Question12 {
 		st.executeUpdate();
 		
 		CallableStatement st2 = con.prepareCall("{call proc2(?)}");
-		st2.registerOutParameter(1, );
+		st2.registerOutParameter(1,2 );
 		ResultSet rs = st2.executeQuery();
 		
 		while(rs.next()) {

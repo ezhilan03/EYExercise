@@ -1,4 +1,4 @@
-package EYExercise.assignment.multiThreadCommunicator;
+package InternExercise.assignment.multiThreadCommunicator;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

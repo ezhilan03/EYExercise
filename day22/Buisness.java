@@ -1,4 +1,4 @@
-package EYExercise.day22;
+package InternExercise.day22;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

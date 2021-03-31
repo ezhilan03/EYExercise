@@ -1,4 +1,4 @@
-package EYExercise.day1Exercise;
+package InternExercise.day1Exercise;
 import java.util.Arrays;
 public class Index {
 	public static int findIndex(int[] arr, int t) 

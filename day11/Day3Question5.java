@@ -1,4 +1,4 @@
-package EYExercise.day11;
+package InternExercise.day11;
 
 public interface Day3Question5 {
 	public void met1();

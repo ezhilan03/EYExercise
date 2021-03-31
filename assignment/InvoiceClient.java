@@ -1,4 +1,4 @@
-package EYExercise.assignment;
+package InternExercise.assignment;
 
 import java.io.BufferedReader;
 import java.io.Console;
@@ -8,11 +8,11 @@ import java.sql.Date;
 
 import com.microsoft.schemas.office.x2006.digsig.CTSignatureInfoV1;
 
-import EYExercise.day22.invoicejdbc.CustomerDetailsDTO;
-import EYExercise.day22.invoicejdbc.InvoiceMasterDAOImpl;
-import EYExercise.day22.invoicejdbc.InvoiceMasterDTO;
-import EYExercise.day22.invoicejdbc.ItemDetailsDTO;
-import EYExercise.day22.invoicejdbc.ItemTransactionDTO;
+import InternExercise.day22.invoicejdbc.CustomerDetailsDTO;
+import InternExercise.day22.invoicejdbc.InvoiceMasterDAOImpl;
+import InternExercise.day22.invoicejdbc.InvoiceMasterDTO;
+import InternExercise.day22.invoicejdbc.ItemDetailsDTO;
+import InternExercise.day22.invoicejdbc.ItemTransactionDTO;
 
 
 public class InvoiceClient {

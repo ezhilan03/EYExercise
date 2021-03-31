@@ -1,4 +1,4 @@
-package EYExercise.day13;
+package InternExercise.day13;
 
 public class GenericsDemo3 {
 	public static void main(String[] args) {

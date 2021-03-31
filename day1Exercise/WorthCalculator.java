@@ -1,4 +1,4 @@
-package EYExercise.day1Exercise;
+package InternExercise.day1Exercise;
 //27
 
 public class WorthCalculator {

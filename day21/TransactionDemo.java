@@ -1,4 +1,4 @@
-package EYExercise.day21;
+package InternExercise.day21;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

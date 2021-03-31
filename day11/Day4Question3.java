@@ -1,4 +1,4 @@
-package EYExercise.day11;
+package InternExercise.day11;
 
 public class Day4Question3 {
 	public void mth1() {

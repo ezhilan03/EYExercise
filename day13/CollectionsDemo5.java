@@ -1,4 +1,4 @@
-package EYExercise.day13;
+package InternExercise.day13;
 
 import java.util.Map;
 import java.util.WeakHashMap;

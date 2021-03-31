@@ -1,4 +1,4 @@
-package EYExercise.day12; // the program is the main thread
+package InternExercise.day12; // the program is the main thread
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

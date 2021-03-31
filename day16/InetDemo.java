@@ -1,4 +1,4 @@
-package EYExercise.day16;
+package InternExercise.day16;
 
 import java.net.InetAddress;
 

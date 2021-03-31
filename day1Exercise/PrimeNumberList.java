@@ -1,4 +1,4 @@
-package EYExercise.day1Exercise;
+package InternExercise.day1Exercise;
 import java.util.ArrayList;
 import java.util.List;
 public class PrimeNumberList {

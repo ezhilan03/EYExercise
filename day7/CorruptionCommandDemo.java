@@ -1,4 +1,4 @@
-package day7;
+package InternExercise.day7;
 
 public class CorruptionCommandDemo {	
 	static ESeva eseva;

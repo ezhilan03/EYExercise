@@ -1,4 +1,4 @@
-package EYExercise.day10;
+package InternExercise.day10;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -8,7 +8,7 @@ public class InterfaceDemo {
 	public static void main(String[] args) {
 		/*
 		 * Interface is a special class whose activity is promised by the class which implements it, and when an behavioral object is subjected
-		 * to the implementation, the bahavioral object becomes a component.
+		 * to the implementation, the behavioral object becomes a component.
 		 * 
 		 */
 		StanelyAlopathyMC stanely = new StanelyAlopathyMC();

@@ -1,4 +1,4 @@
-package EYExercise.day16;
+package InternExercise.day16;
 
 /*
  *  % - symbol after which  the formatting instruction follows.

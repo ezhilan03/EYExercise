@@ -1,4 +1,4 @@
-package EYExercise.day1Exercise;
+package InternExercise.day1Exercise;
 // 23
 
 public class Manipulator {

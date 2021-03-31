@@ -1,4 +1,4 @@
-package EYExercise.day12;
+package InternExercise.day12;
 
 public class LambdaDemo {
 	public static void main(String[] args) {
@@ -16,9 +16,7 @@ public class LambdaDemo {
 			System.out.println("This is from Lambda");
 		});
 		
-		int n = method2((s,num)->{
-			return num+10;
-		});
+		int n = method2((s,num)->num+10);
 		System.out.println(n);
 	}
 	

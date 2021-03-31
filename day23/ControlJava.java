@@ -1,4 +1,4 @@
-package EYExercise.day23;
+package InternExercise.day23;
 
 import java.applet.Applet;
 import java.awt.Graphics;

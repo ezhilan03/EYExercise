@@ -1,6 +1,6 @@
-package EYExercise.day11.day3Question5DiffPack;
+package InternExercise.day11.day3Question5DiffPack;
 
-import EYExercise.day11.Day3Question5;
+import InternExercise.day11.Day3Question5;
 
 public class Day3Question5Diff implements Day3Question5{
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package EYExercise.day1Exercise;
+package InternExercise.day1Exercise;
 
 public class InitializationTypes {
 	static int variableStatic = 10;

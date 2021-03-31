@@ -1,4 +1,4 @@
-package EYExercise.day14.test;
+package InternExercise.day14.test;
 
 import org.junit.After;
 import org.junit.AfterClass;

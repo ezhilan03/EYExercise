@@ -1,6 +1,6 @@
-package EYExercise.day11.pro;
+package InternExercise.day11.pro;
 
-import EYExercise.day11.Day3Qeustion6;
+import InternExercise.day11.Day3Qeustion6;
 
 public class ProClass extends Day3Qeustion6{
 	public static void main(String[] args) {

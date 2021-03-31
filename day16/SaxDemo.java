@@ -1,4 +1,4 @@
-package EYExercise.day16;
+package InternExercise.day16;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;

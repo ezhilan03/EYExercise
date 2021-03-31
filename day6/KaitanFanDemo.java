@@ -1,4 +1,4 @@
-package day6;
+package InternExercise.day6;
 import java.util.Scanner;
 public class KaitanFanDemo {
 	public static void main(String[] args) {

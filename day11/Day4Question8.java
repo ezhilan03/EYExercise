@@ -1,4 +1,4 @@
-package EYExercise.day11;
+package InternExercise.day11;
 import java.util.Scanner;
 
 public class Day4Question8 {

@@ -1,4 +1,4 @@
-package EYExercise.day11;
+package InternExercise.day11;
 import java.util.Arrays;
 
 public class Day3Question3 {

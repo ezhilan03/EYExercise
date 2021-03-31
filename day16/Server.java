@@ -1,4 +1,4 @@
-package EYExercise.day16;
+package InternExercise.day16;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -9,7 +9,8 @@ import java.net.Socket;
 public class Server {
 	ServerSocket ss;Socket s;PrintWriter out;BufferedReader br,in;
 	public Server() {
-		try {
+		try {//threads here each thread has its own socket.
+			//keep the socket and id for socket using hashmap;keep all socket in a hashmap.
 			ss = new ServerSocket(2000); //this is the port number where the request will land.
 			System.out.println("Server is ready");
 			while(true) {

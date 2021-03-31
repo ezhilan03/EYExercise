@@ -2,46 +2,79 @@
 	<body>
 		<script>
 		
-			//using new object();
+			//1 galaxy object usage
 			var person = new Object();
-			person.name="Diego";
+			person.name="Diego111";
 			person.getName=function(){
 				return this.name;
 			};
 			
-			function main(){
-				alert(person.getName());
-			}
-			main();
+			console.log(person.getName());
 		
-			//literal notation
-			var person2 = { person2.name : "Diego", 
-					person2.getName : function(){ 
-					return this.name; 
-					} 
+			//2 literal notation
+			var person2 = { 
+					name : "Diego222", 
+					getName : function(){ 
+						return this.name; 
+						} 
 				} 
+			console.log(person2.getName());
 			
-			//factory function
+			//3 factory function
 			var Person=function(name){
 			    var result = new Object();
 			    result.name = name;
 			    result.getName = function(){
-			        return this.name;
+			        return result.name;
 			    };
 			    return result;
 			};
 			
-			var person3 = new Person("Ezhilan");
-			alert(person3.getName())
+			var person3 = new Person("Diego333");
+			console.log(person3.getName());
 			
 			
-			//Prototype
-			function Person5(){}; 
-			Person5.prototype.name = "Joysan"; 
-			var personOne = new Person5(); 
-			var personTwo = new Person5(); 
-			document.write(personOne.name);
-			document.write(personTwo.name);
+			//4 function constructor
+			function Person4(name){
+				this.name=name;
+				this.getName = function() {
+					return this.name;
+				}
+			}
+			var person4 = new Person4("Diego444");
+			console.log(person4.getName());
+			
+			//we can create object using a reference to an object
+			var person5 = new person4.constructor("Diego555");
+			console.log(person5.getName());
+			
+			//Prototype - can achieve inheritence and can add new properties and functions
+			function Person6(){}; 
+			Person6.prototype.name = "Diego666"; 
+			Person6.prototype.getName = function(){
+				return this.name;
+			}
+			var person6 = new Person6(); 
+			console.log(person6.getName());
+			
+			//inheritence
+			function Parent(){
+				this.getName = function(){
+					return this.name;
+				}
+			}
+			
+			function Child(name){
+				this.name=name;
+			}
+			Child.prototype = new Parent(); //inheritence is achieved. Adding parent
+			Child.prototype.constructor = Child; //saying child constructor should point to child. So we can create a deep copy of it.
+			
+			var person7 = new Child("Diego777");
+			console.log(person7.getName());
+			
+			var person8 = new person7.constructor("Deep copy of child");
+			console.log(person8.getName());
 			
 			
 		</script>

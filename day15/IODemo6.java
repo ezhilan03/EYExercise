@@ -1,4 +1,4 @@
-package EYExercise.day15;
+package InternExercise.day15;
 
 import java.io.FileOutputStream;
 
@@ -12,7 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class IODemo6 {
 	public static void main(String[] args) throws Exception	{   
 		XSSFWorkbook workbook = new XSSFWorkbook();
-		XSSFSheet sheet = workbook.createSheet("Bill");
+		XSSFSheet sheet = workbook.createSheet("Invoice");
 		
 		Object[][] data = {
 				{"Customer name :","Ezhilan","","Bill no :","102","","bill date :","08/03/2021"},
@@ -36,7 +36,7 @@ public class IODemo6 {
 				}
 			}
 		}
-		try(FileOutputStream fos = new FileOutputStream("bill.xlsx")) {
+		try(FileOutputStream fos = new FileOutputStream("invoice.xlsx")) {
 			workbook.write(fos);
 			System.out.println("file writtend successfully");
 		}

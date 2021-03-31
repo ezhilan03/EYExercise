@@ -1,4 +1,4 @@
-package EYExercise.day13;
+package InternExercise.day13;
 
 import java.util.Iterator;
 import java.util.PriorityQueue;

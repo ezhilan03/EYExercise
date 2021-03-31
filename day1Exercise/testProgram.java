@@ -1,4 +1,4 @@
-package EYExercise.day1Exercise;
+package InternExercise.day1Exercise;
 // 17
 public class testProgram {
 	static final int integerConstant = 20; //Unlike in C language constants are not supported in Java(directly). But, you can still create a constant by declaring a variable static and final.

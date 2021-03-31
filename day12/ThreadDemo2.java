@@ -1,4 +1,4 @@
-package EYExercise.day12;
+package InternExercise.day12;
 
 public class ThreadDemo2 {
 	public static void main(String[] args) {

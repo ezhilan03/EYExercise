@@ -1,4 +1,4 @@
-package EYExercise.day22.invoicejdbc;
+package InternExercise.day22.invoicejdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
-import EYExercise.day21.DBUtility;
+import InternExercise.day21.DBUtility;
 
 public class ItemTransactionDAOImpl implements ItemTransactionDAO{
 	Connection con;

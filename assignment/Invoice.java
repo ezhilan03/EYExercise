@@ -1,13 +1,13 @@
-package EYExercise.assignment;
+package InternExercise.assignment;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.time.LocalDateTime;
 
-import EYExercise.day22.invoicejdbc.CustomerDetailsDTO;
-import EYExercise.day22.invoicejdbc.InvoiceMasterDTO;
-import EYExercise.day22.invoicejdbc.ItemDetailsDTO;
-import EYExercise.day22.invoicejdbc.ItemTransactionDTO;
+import InternExercise.day22.invoicejdbc.CustomerDetailsDTO;
+import InternExercise.day22.invoicejdbc.InvoiceMasterDTO;
+import InternExercise.day22.invoicejdbc.ItemDetailsDTO;
+import InternExercise.day22.invoicejdbc.ItemTransactionDTO;
 
 public interface Invoice extends Remote{
 	

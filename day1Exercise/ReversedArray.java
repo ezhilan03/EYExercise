@@ -1,4 +1,4 @@
-package EYExercise.day1Exercise;
+package InternExercise.day1Exercise;
 import java.util.Arrays;
 public class ReversedArray {
 	public static void main(String[] args) {

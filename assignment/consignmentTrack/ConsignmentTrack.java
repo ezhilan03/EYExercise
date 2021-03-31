@@ -1,4 +1,4 @@
-package EYExercise.assignment.consignmentTrack;
+package InternExercise.assignment.consignmentTrack;
  
 import java.time.DayOfWeek;
 import java.time.Duration;

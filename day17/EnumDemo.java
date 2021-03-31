@@ -1,4 +1,4 @@
-package EYExercise.day17;
+package InternExercise.day17;
 
 public class EnumDemo {
 	public static void main(String[] args) {

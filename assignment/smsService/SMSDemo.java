@@ -1,4 +1,4 @@
-package EYExercise.assignment.smsService;
+package InternExercise.assignment.smsService;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -9,7 +9,7 @@ public class SMSDemo {
 		Object obj = new SMSDemo();
 		obj = Proxy.newProxyInstance(SMSDemo.class.getClassLoader(), new Class[] {SMSSender.class}, new MyInvocationHandler(new SMSService()));
 		SMSSender converter = (SMSSender)obj;
-		converter.sendSMS("invoice");
+		converter.sendSMS("C:\\Users\\ezhil\\OneDrive\\Desktop\\invoice.xml");
 	}
 }
 

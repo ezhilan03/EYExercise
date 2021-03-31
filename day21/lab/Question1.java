@@ -1,4 +1,4 @@
-package EYExercise.day21.lab;
+package InternExercise.day21.lab;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;

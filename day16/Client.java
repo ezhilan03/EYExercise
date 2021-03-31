@@ -1,4 +1,4 @@
-package EYExercise.day16;
+package InternExercise.day16;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,7 +10,7 @@ public class Client {
 	Socket s;BufferedReader br,in;PrintWriter out;
 	public Client() {
 		try {
-			while(true) {
+			while(true) {//1
 				s=new Socket("localhost",2000); //(location where the server is available, port number)
 	
 				br= new BufferedReader(new InputStreamReader(s.getInputStream()));

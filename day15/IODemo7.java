@@ -1,4 +1,4 @@
-package EYExercise.day15;
+package InternExercise.day15;
 
 import java.io.FileOutputStream;
 
@@ -13,7 +13,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class IODemo7 {
 	public static void main(String[] args) throws Exception{
 		Document doc = new Document();
-		PdfWriter.getInstance(doc, new FileOutputStream("bill.pdf"));
+		PdfWriter.getInstance(doc, new FileOutputStream("invoice.pdf"));
 		
 		doc.open();
 		Font font = FontFactory.getFont(FontFactory.COURIER, 12, BaseColor.BLACK);

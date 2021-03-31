@@ -1,4 +1,4 @@
-package day5;
+package InternExercise.day5;
 
 public class Question14 {
 	public static void main(String[] args) {

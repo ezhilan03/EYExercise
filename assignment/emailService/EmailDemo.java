@@ -1,4 +1,4 @@
-package EYExercise.assignment.emailService;
+package InternExercise.assignment.emailService;
 
 public class EmailDemo {
 	public static void main(String[] args) throws Exception{

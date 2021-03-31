@@ -1,5 +1,5 @@
-package EYExercise.day11;
-import EYExercise.day11.vehicle.FourWheeler;
+package InternExercise.day11;
+import InternExercise.day11.vehicle.FourWheeler;
 
 public class Day3Question7 {
 	public static void main(String[] args) throws Exception{

@@ -1,4 +1,4 @@
-package EYExercise.day13;
+package InternExercise.day13;
 
 import java.io.FileInputStream;
 import java.io.InputStream;

@@ -1,4 +1,4 @@
-package EYExercise.assignment.consignmentTrack;
+package InternExercise.assignment.consignmentTrack;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;

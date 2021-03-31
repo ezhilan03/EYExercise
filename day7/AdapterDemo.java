@@ -1,4 +1,4 @@
-package day7;
+package InternExercise.day7;
 
 public class AdapterDemo {
 	public static void main(String[] args) {

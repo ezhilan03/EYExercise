@@ -1,4 +1,4 @@
-package day3;
+package InternExercise.day3;
 
 public class VariableDemo {
 	public static void main(String[] args) {
@@ -7,20 +7,23 @@ public class VariableDemo {
 	}
 }
 
-class Canteen{
-	Canteen(){
+class Canteen {
+	Canteen() {
 		System.out.println("Canteen contructor is initiated");
 	}
 }
-class Projector{
-	Projector(){
+
+class Projector {
+	Projector() {
 		System.out.println("Projector contructor is initiated");
 	}
 }
-class TrainingRoom{
+
+class TrainingRoom {
 	TrainingRoom() {
 		System.out.println("Training room contructor is initiated");
 	}
-	static Canteen canteenobj=new Canteen();
-	Projector projectObj=new Projector();
+
+	static Canteen canteenobj = new Canteen();
+	Projector projectObj = new Projector();
 }

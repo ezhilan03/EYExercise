@@ -1,4 +1,4 @@
-package EYExercise.day17;
+package InternExercise.day17;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

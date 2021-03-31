@@ -1,4 +1,4 @@
-package EYExercise.day13;
+package InternExercise.day13;
 
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
@@ -21,7 +21,7 @@ public class ForkJoinDemo {
 		MyTasks task4 = new MyTasks(9,12,arr,1);
 		MyTasks task5 = new MyTasks(12,16,arr,1);
 		
-		int result1 = fjPool.invoke(task1);
+		int result1 = fjPool.invoke(task1); //if we have 4 CPU s only 4 tasks run in parallel and 1 task will wait.
 		int result2 = fjPool.invoke(task2);
 		int result3 = fjPool.invoke(task3);
 		int result4 = fjPool.invoke(task4);

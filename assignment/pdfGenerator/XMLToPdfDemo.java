@@ -1,4 +1,4 @@
-package EYExercise.assignment.pdfGenerator;
+package InternExercise.assignment.pdfGenerator;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

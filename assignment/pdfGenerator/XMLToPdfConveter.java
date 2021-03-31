@@ -1,4 +1,4 @@
-package EYExercise.assignment.pdfGenerator;
+package InternExercise.assignment.pdfGenerator;
 
 import java.io.File;
 import java.io.FileOutputStream;

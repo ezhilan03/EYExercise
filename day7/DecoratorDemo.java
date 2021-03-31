@@ -1,5 +1,4 @@
-package day7;
-
+package InternExercise.day7;
 public class DecoratorDemo {
 	public static void main(String[] args) {
 		IceCream FinalIceCream = new Vannila(new Chocolate(new Nuts(new Cherry())));

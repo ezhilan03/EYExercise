@@ -1,4 +1,4 @@
-package EYExercise.assignment.emailService;
+package InternExercise.assignment.emailService;
 
 import java.util.Properties;
 

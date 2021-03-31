@@ -1,4 +1,4 @@
-package day6;
+package InternExercise.day6;
 
 public class TemplateMethodDemo {
 	public static void main(String[] args) {

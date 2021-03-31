@@ -1,4 +1,4 @@
-package EYExercise.assignment.smsService;
+package InternExercise.assignment.smsService;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -29,15 +29,16 @@ public class SMSService implements SMSSender{
 			dbf.setValidating(true);
 			
 			DocumentBuilder db = dbf.newDocumentBuilder();
-			Document doc = db.parse(fileName+".xml");
+			Document doc = db.parse(fileName);
 			
 			Element rootElement = doc.getDocumentElement();
 			
 			String customerName = rootElement.getChildNodes().item(0).getChildNodes().item(0).getNodeValue();
 			String invNo = rootElement.getChildNodes().item(1).getChildNodes().item(0).getNodeValue();
 			String invDate = rootElement.getChildNodes().item(2).getChildNodes().item(0).getNodeValue();
+			String total = rootElement.getChildNodes().item(5).getChildNodes().item(0).getNodeValue();
 			
-			String message = " Hello. This is your Invoice details."+"Customer Name :"+customerName+"   Invoice No : "+invNo+"   Invoice Date : "+invDate;
+			String message = " Hello. This is your Invoice details."+"Customer Name :"+customerName+"   Invoice No : "+invNo+"   Invoice Date : "+invDate + " Total : "+total;
 			
 			String requestUrl  = "http://127.0.0.1:9501/api?action=sendmessage&" +
 					 "username=" + URLEncoder.encode(username, "UTF-8") +

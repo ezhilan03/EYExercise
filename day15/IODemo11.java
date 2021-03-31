@@ -1,4 +1,4 @@
-package EYExercise.day15;
+package InternExercise.day15;
 
 import java.io.BufferedReader;
 import java.io.FileOutputStream;

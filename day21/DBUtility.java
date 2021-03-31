@@ -1,4 +1,4 @@
-package EYExercise.day21;
+package InternExercise.day21;
 
 import java.io.FileInputStream;
 import java.sql.Connection;

@@ -1,4 +1,4 @@
-package EYExercise.assignment;
+package InternExercise.assignment;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,18 +13,18 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import EYExercise.assignment.consignmentTrack.BreakInterval;
-import EYExercise.assignment.consignmentTrack.ConsignmentTrack;
-import EYExercise.assignment.excelGenerator.XMLToExcelConverter;
-import EYExercise.assignment.pdfGenerator.XMLToPdfConveter;
-import EYExercise.day22.invoicejdbc.CustomerDetailsDAOImpl;
-import EYExercise.day22.invoicejdbc.CustomerDetailsDTO;
-import EYExercise.day22.invoicejdbc.InvoiceMasterDAOImpl;
-import EYExercise.day22.invoicejdbc.InvoiceMasterDTO;
-import EYExercise.day22.invoicejdbc.ItemDetailsDAOImpl;
-import EYExercise.day22.invoicejdbc.ItemDetailsDTO;
-import EYExercise.day22.invoicejdbc.ItemTransactionDAOImpl;
-import EYExercise.day22.invoicejdbc.ItemTransactionDTO;
+import InternExercise.assignment.consignmentTrack.BreakInterval;
+import InternExercise.assignment.consignmentTrack.ConsignmentTrack;
+import InternExercise.assignment.excelGenerator.XMLToExcelConverter;
+import InternExercise.assignment.pdfGenerator.XMLToPdfConveter;
+import InternExercise.day22.invoicejdbc.CustomerDetailsDAOImpl;
+import InternExercise.day22.invoicejdbc.CustomerDetailsDTO;
+import InternExercise.day22.invoicejdbc.InvoiceMasterDAOImpl;
+import InternExercise.day22.invoicejdbc.InvoiceMasterDTO;
+import InternExercise.day22.invoicejdbc.ItemDetailsDAOImpl;
+import InternExercise.day22.invoicejdbc.ItemDetailsDTO;
+import InternExercise.day22.invoicejdbc.ItemTransactionDAOImpl;
+import InternExercise.day22.invoicejdbc.ItemTransactionDTO;
 
 
 public class InvoiceServer extends UnicastRemoteObject implements Invoice{

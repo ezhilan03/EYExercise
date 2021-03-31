@@ -1,16 +1,23 @@
-package day3;
+package InternExercise.day3;
 
 public class Test {
 	protected int pro;
-			   int nomad;
+	int nomad;
 	private int pri;
 	public int pub;
-	
-	private void primet() {	}
-			void nomadmet() {}
-	protected void promet() {}
-	public void pubmet() {}
-	
+
+	private void primet() {
+	}
+
+	void nomadmet() {
+	}
+
+	protected void promet() {
+	}
+
+	public void pubmet() {
+	}
+
 	public void met() {
 		primet();
 		nomadmet();
@@ -23,7 +30,7 @@ public class Test {
 	}
 }
 
-class ChildTest extends Test{
+class ChildTest extends Test {
 	public void main(String[] args) {
 		primet();
 		nomadmet();
@@ -36,8 +43,9 @@ class ChildTest extends Test{
 	}
 }
 
-class NonChildTest{
-	Test test=new Test();
+class NonChildTest {
+	Test test = new Test();
+
 	public void main(String[] args) {
 		test.primet();
 		test.nomadmet();

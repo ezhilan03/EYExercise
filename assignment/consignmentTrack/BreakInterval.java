@@ -1,4 +1,4 @@
-package EYExercise.assignment.consignmentTrack;
+package InternExercise.assignment.consignmentTrack;
 
 public class BreakInterval{
 	int hours;

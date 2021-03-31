@@ -1,4 +1,4 @@
-package EYExercise.assignment.excelGenerator;
+package InternExercise.assignment.excelGenerator;
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -1,4 +1,4 @@
-package EYExercise.day1Exercise;
+package InternExercise.day1Exercise;
 //22
 public class Modifier {
 	public static void main(String[] args) {

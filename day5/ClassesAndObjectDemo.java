@@ -1,4 +1,4 @@
-package day5;
+package InternExercise.day5;
 
 public class ClassesAndObjectDemo {
 	public static void main(String[] args) {
@@ -51,4 +51,3 @@ class Kalimark{
 //			System.out.println("Campa cola");
 //		}
 //	}
-}

@@ -1,4 +1,4 @@
-package day7;
+package InternExercise.day7;
 
 public class CommandDemo {
 	public static void main(String[] args) { //client
@@ -21,7 +21,7 @@ public class CommandDemo {
 }
 
 class UniversalRemote{ //invoker
-	Commands c[] = new Commands[5];
+	Command c[] = new Command[5];
 	public void doRemote() {
 		for(int i=0;i<5;i++) {
 			c[i]=new DummyCommand();
@@ -30,7 +30,7 @@ class UniversalRemote{ //invoker
 	public void executeCommand(int slot) {
 		c[slot].execute();
 	}
-	public void setCommand(Commands command,int slot) {
+	public void setCommand(Command command,int slot) {
 		c[slot]=command;
 	}
 }
@@ -48,13 +48,13 @@ abstract class Command{ // command
 		this.ss=ss;
 	}
 }
-class DummyCommand extends Commands{ //concrete commands
+class DummyCommand extends Command{ //concrete commands
 	@Override
 	public void execute() {
 		System.out.println("Dummy command is being executed....");
 	}
 }
-class NewsChannelCommand extends Commands{
+class NewsChannelCommand extends Command{
 	public NewsChannelCommand(Tv sony,SetTopBox tata,VGame vGame,SoundSystem ss) {
 		super(sony,tata,vGame,ss);
 	}
@@ -68,7 +68,7 @@ class NewsChannelCommand extends Commands{
 		System.out.println("Process over.....Enjoy the news....");
 	}
 }
-class PlayTennisCommand extends Commands{
+class PlayTennisCommand extends Command{
 	public PlayTennisCommand(Tv sony,SetTopBox tata,VGame vGame,SoundSystem ss) {
 		super(sony,tata,vGame,ss);
 	}
@@ -82,7 +82,7 @@ class PlayTennisCommand extends Commands{
 		System.out.println("Process over.....Enjoy the game....");
 	}
 }
-class SerialChannelCommand extends Commands{
+class SerialChannelCommand extends Command{
 	public SerialChannelCommand(Tv sony,SetTopBox tata,VGame vGame,SoundSystem ss) {
 		super(sony,tata,vGame,ss);
 	}

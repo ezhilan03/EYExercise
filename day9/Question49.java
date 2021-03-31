@@ -1,4 +1,4 @@
-package EYExercise.day9;
+package InternExercise.day9;
 
 public class Question49 {
 	public static void main(String args[]) {

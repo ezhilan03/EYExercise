@@ -1,4 +1,4 @@
-package EYExercise.day17;
+package InternExercise.day17;
 
 import java.text.DateFormat;
 import java.text.NumberFormat;

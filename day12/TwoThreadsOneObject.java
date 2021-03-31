@@ -1,4 +1,4 @@
-package EYExercise.day12;
+package InternExercise.day12;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;

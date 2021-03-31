@@ -1,4 +1,4 @@
-package EYExercise.assignment;
+package InternExercise.assignment;
 
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;

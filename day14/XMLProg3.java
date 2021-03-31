@@ -1,4 +1,4 @@
-package EYExercise.day14;
+package InternExercise.day14;
 
 import java.io.FileWriter;
 import java.io.StringWriter;

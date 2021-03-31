@@ -1,4 +1,4 @@
-package EYExercise.day1Exercise;
+package InternExercise.day1Exercise;
 
 public class TwoDRectangularArray2 {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package EYExercise.day11;
+package InternExercise.day11;
 
 public class Day4Question4 {
 	public static void main(String[] args) throws MyException{
