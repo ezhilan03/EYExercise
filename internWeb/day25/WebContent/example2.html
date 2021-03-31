@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	<script>
+		function chkfrm(){
+			var x = document.card.name.value;
+			if(x.length==0){
+				alert("Please enter name \n");
+				return false;
+			}else{
+				return true;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form name="card" action="Example2" method="post" onsubmit="chkfrm();">
+		<b>Enter your name</b>
+		<input type="text" name="name">
+		<input type="submit">
+	</form>
+</body>
+</html>
