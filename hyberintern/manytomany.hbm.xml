@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="manytomany.Student" table="Student">
+        <id name="sid" type="int" >
+            <generator class="hilo"/>
+        </id> 
+         <property name="sname" />
+         <property name="marks" />
+         <set name="trainings" table="STUDENT_TRAINING" inverse="false" cascade="all">
+         	<key column="STUDENT_ID"></key>
+         	<many-to-many column="TRAINING_ID" class="manytomany.Training"></many-to-many>
+         </set>
+    </class>
+    
+  	<class name="manytomany.Training" table="TRAINING">
+  		<id name="tid" type="int" >
+            <generator class="hilo"/>
+        </id>
+        <property name="tname" type="string" />
+     	<property name="tstartdate" />
+     	<set name="students" table="STUDENT_TRAINING" cascade="all">
+         	<key column="TRAINING_ID"></key>
+         	<many-to-many column="STUDENT_ID" class="manytomany.Student"></many-to-many>
+         </set>
+     </class>	        
+	
+
+</hibernate-mapping>
