@@ -1,0 +1,84 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+<!-- <bean class="day2.MyBeanProcessor"></bean> -->
+<import resource="config2.xml" />
+<bean id="factory" class="day2.BataShoeFactory">
+	<property name="key">
+		<value>Key set by injection</value>
+	</property>
+</bean>
+
+<bean id="shop" class="day2.GokulShoeShop" 
+lazy-init="false" 
+init-method="setUp" 
+destroy-method="destruct"
+
+>
+	<constructor-arg>
+		<ref bean="factory"/>
+	</constructor-arg>
+	<!-- <property name="factory">
+		<ref bean="fac"/>
+	</property> -->
+	<property name="name">
+		<value>hello world....</value>
+	</property>
+	<property name="mylist">
+		<list>
+			<value>first value....</value>
+			<value>second value...</value>
+		</list>
+	</property>
+</bean>
+
+<bean id="wadvice" class="day2.WelcomeAdvice"></bean>
+<bean id="eadvice" class="day2.ExceptionHandler" />
+<bean id="aroundAdvice" class="day2.ValidationAdvice" />
+<bean id="aadvice" class="day2.ThankYouAdvice"></bean>
+
+
+<bean id="advicedShop" class="org.springframework.aop.framework.ProxyFactoryBean">
+	<property name="target"> <!-- which bean you are targeting -->
+		<ref bean="shop" />
+	</property>
+	<property name="interceptorNames">  <!-- the advice class -->
+		<list>
+			<value>pointcutadvice1</value>
+			<value>pointcutadvice2</value>
+			<value>pointcutadvice3</value>
+			<value>pointcutadvice4</value>
+			<value>exportAdvice</value>
+		</list>
+	</property>
+	<property name="proxyInterfaces">
+		<value>day2.ShoeSeller</value>
+	</property>
+</bean>
+
+<bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource">
+	<property name="driverClassName" value="${driver}"></property>
+	<property name="url" value="${url}"></property>
+	<property name="username" value="${username}"></property>
+	<property name="password" value="${password}"></property>
+</bean>
+<context:property-placeholder location="dbconfig.properties"/>
+
+<bean id="dao" class="day2.DBDao">
+	<property name="dataSource">
+		<ref bean="datasource"></ref>
+	</property>
+</bean>
+</beans>
+
+
+
+
